@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
+
 const index = require('./routes/index');
 const reports = require('./routes/reports');
 
 const app = express();
+app.use(cors());
 
 const port = 8333;
 
