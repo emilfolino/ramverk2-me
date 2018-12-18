@@ -6,9 +6,11 @@ const index = require('./routes/index');
 const reports = require('./routes/reports');
 
 const app = express();
+const port = 8333;
+
 app.use(cors());
 
-const port = 8333;
+
 
 // don't show the log when it is test
 if (process.env.NODE_ENV !== 'test') {
