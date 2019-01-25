@@ -12,6 +12,8 @@
     "docker-8": "docker-compose run node_8_alpine npm test",
     "docker-6": "docker-compose run node_6_alpine npm test",
     "eslint": "eslint .",
+    "report-coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "report-codecov": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "clean": "rm -rf npm-debug.log coverage .nyc_output",
     "preclean-all": "npm run clean",
     "clean-all": "rm -rf node_modules"
@@ -26,6 +28,8 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "codecov": "^3.1.0",
+    "coveralls": "^3.0.2",
     "javascript-style-guide": "^0.9.10",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0"
