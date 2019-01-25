@@ -5,7 +5,14 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha 'test/**/*.js'"
+    "test": "nyc --reporter=html --reporter=text mocha 'test/**/*.js'",
+    "docker-latest": "docker-compose run node_alpine npm test",
+    "docker-10": "docker-compose run node_10_alpine npm test",
+    "docker-8": "docker-compose run node_8_alpine npm test",
+    "docker-6": "docker-compose run node_6_alpine npm test",
+    "clean": "rm -rf npm-debug.log coverage .nyc_output",
+    "preclean-all": "npm run clean",
+    "clean-all": "rm -rf node_modules"
   },
   "author": "Emil Folino",
   "license": "MIT",
@@ -15,6 +22,7 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }
