@@ -21,4 +21,6 @@ if (process.env.NODE_ENV !== 'test') {
 app.use('/', index);
 app.use('/reports', reports);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+module.exports = server;

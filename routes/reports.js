@@ -23,4 +23,20 @@ router.get('/kmom01', function(req, res) {
     res.json({ data: questions });
 });
 
+router.get('/kmom02', function(req, res) {
+    const questions = [
+        {
+            question: "Vilket JavaScript-ramverk valde du och varför?",
+            answer: "Jag valde att implementera en me-sida i alla ramverken" +
+                    " mest för att jag ville lära mig alla."
+        },
+        {
+            question: "Hur gick det att sedan implementera din me-sida i ramverket?",
+            answer: "Det gick bra, men är lite trött på Angular."
+        },
+    ];
+
+    res.json({ data: questions });
+});
+
 module.exports = router;
